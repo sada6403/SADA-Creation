@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Modal Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal-backdrop {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white">
+    <div class="p-8">
+        <h1 class="text-3xl font-bold mb-8">SADA Creation Portfolio Modal Test</h1>
+        
+        <!-- Test Portfolio Grid -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Sample Logo Card -->
+            <div class="group relative overflow-hidden rounded-2xl cursor-pointer" onclick="openModal('SADA Creation Brand Identity', '/imgs/logosada.png', 'Premium brand identity design for SADA Creation studio')">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 opacity-20"></div>
+                <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/60 transition-all duration-500"></div>
+                
+                <div class="relative p-8 h-80 flex flex-col justify-center items-center text-center">
+                    <div class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg overflow-hidden">
+                        <div class="text-4xl">🎨</div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-white mb-2">SADA Creation Brand Identity</h3>
+                    <p class="text-blue-400 text-sm uppercase tracking-wider font-medium mb-3">Logo Design</p>
+                    <p class="text-slate-300 text-sm mb-6 opacity-80">Premium brand identity design for SADA Creation studio</p>
+                    
+                    <div class="absolute inset-0 bg-slate-950/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-center">
+                            <button class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl hover:scale-105 transition-all duration-300 flex items-center mx-auto mb-4 shadow-lg">
+                                👁️ View Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More cards can be added here -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="projectModal" class="fixed inset-0 bg-black/80 modal-backdrop z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-slate-700/50 max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between p-6 border-b border-slate-700/50">
+                <div>
+                    <h3 id="modalTitle" class="text-2xl font-bold text-white">Project Title</h3>
+                    <p class="text-blue-400 text-sm uppercase tracking-wider font-medium">Logo Design</p>
+                </div>
+                <button onclick="closeModal()" class="w-10 h-10 bg-slate-800/60 hover:bg-slate-700/60 rounded-xl flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
+                    ✕
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <div class="lg:w-2/3">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                            <img id="modalImage" src="" alt="" class="w-full h-auto object-contain max-h-[60vh]" style="display: none;">
+                            <div id="modalFallback" class="w-full h-64 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-6xl">
+                                🎨
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/3">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Project Details</h4>
+                                <p id="modalDescription" class="text-slate-300 leading-relaxed">Project description</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-3">Project Type</h4>
+                                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full text-white font-medium">
+                                    🎨 Logo Design
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-3">Features</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center text-slate-300">
+                                        ✅ Professional Design
+                                    </li>
+                                    <li class="flex items-center text-slate-300">
+                                        ✅ Vector Format
+                                    </li>
+                                    <li class="flex items-center text-slate-300">
+                                        ✅ Brand Identity
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex space-x-3">
+                                <button class="flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl hover:scale-105 transition-all duration-300 flex items-center justify-center font-medium">
+                                    📥 Download
+                                </button>
+                                <button class="px-4 py-3 bg-slate-800/60 hover:bg-slate-700/60 text-white rounded-xl transition-colors duration-300 flex items-center justify-center">
+                                    📤
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, imageSrc, description) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            
+            const modalImage = document.getElementById('modalImage');
+            const modalFallback = document.getElementById('modalFallback');
+            
+            modalImage.src = imageSrc;
+            modalImage.onload = function() {
+                modalImage.style.display = 'block';
+                modalFallback.style.display = 'none';
+            };
+            modalImage.onerror = function() {
+                modalImage.style.display = 'none';
+                modalFallback.style.display = 'flex';
+            };
+            
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'unset';
+        }
+        
+        // Close modal when clicking backdrop
+        document.getElementById('projectModal').addEventListener('click', closeModal);
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

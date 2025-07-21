@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SADA Creation - Premium Design Studio | Professional Design Specialist</title>
+    <meta name="description" content="Premium design studio specializing in atmospheric visuals with signature smoky effects. Professional logo design, cinematic video editing, poster creation, and luxury graphic design services.">
+    <meta name="description" content="Premium design studio specializing in professional visuals with expert design solutions. Professional logo design, cinematic video editing, poster creation, and luxury graphic design services.">
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="keywords" content="premium design, smoky effect, logo design, video editing, poster design, graphic design, atmospheric visuals, luxury branding, cinematic effects">
+    <meta name="keywords" content="premium design, professional design, logo design, video editing, poster design, graphic design, luxury visuals, luxury branding, cinematic effects">
+    <meta name="author" content="SADA Creation Studio">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SADA Creation - Premium Design Studio | Smoky Effect Specialist">
+    <meta property="og:description" content="Transform your brand with our signature smoky effect designs. Professional design services that create atmospheric visual experiences.">
+    <meta property="og:description" content="Transform your brand with our premium design solutions. Professional design services that create stunning visual experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio.sad-a.live">
+    <meta property="og:site_name" content="SADA Creation Studio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SADA Creation - Premium Design Studio">
+    <meta name="twitter:description" content="Professional design services with signature smoky effects. Transform your brand with atmospheric visuals.">
+    <meta name="twitter:description" content="Professional design services with premium design solutions. Transform your brand with stunning visuals.">
+    <meta name="twitter:creator" content="@sadacreation">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#020617" media="(prefers-color-scheme: light)">
+    <meta name="color-scheme" content="dark light">
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Performance Optimization -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SADA Creation Studio",
+      "url": "https://portfolio.sad-a.live",
+      "logo": "https://portfolio.sad-a.live/logo.png",
+      "description": "Premium design studio specializing in atmospheric visuals with signature smoky effects.",
+      "description": "Premium design studio specializing in professional visuals with expert design solutions.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXX-XXXXX",
+        "contactType": "customer service",
+        "email": "hello@portfolio.sad-a.live"
+      },
+      "sameAs": [
+        "https://instagram.com/sadacreation",
+        "https://twitter.com/sadacreation",
+        "https://linkedin.com/company/sadacreation"
+      ],
+      "service": [
+        {
+          "@type": "Service",
+          "name": "Logo Design",
+          "description": "Premium logo design with professional aesthetics"
+        },
+        {
+          "@type": "Service", 
+          "name": "Video Editing",
+          "description": "Cinematic video editing with professional effects"
+        },
+        {
+          "@type": "Service",
+          "name": "Poster Design", 
+          "description": "Eye-catching poster designs with premium aesthetics"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+      /* Critical CSS for above-the-fold content */
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: linear-gradient(135deg, #020617 0%, #020617 50%, #0f172a 100%);
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+      
+      /* Enhanced Loading Screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #020617 0%, #020617 50%, #0f172a 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+      }
+      
+      .loading-screen.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      .loading-content {
+        text-align: center;
+        animation: fadeInUp 1s ease-out;
+      }
+      
+      .loading-logo {
+        width: 40px;
+        height: 40px;
+        background: #ffffff;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 3px solid rgba(59, 130, 246, 0.2);
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 24px;
+      }
+      
+      .loading-text {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        font-family: 'Playfair Display', serif;
+      }
+      
+      .loading-subtext {
+        color: #bfdbfe;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Prevent flash of unstyled content */
+      .app-container {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+      }
+      
+      .app-container.loaded {
+        opacity: 1;
+      }
+      
+      /* Critical navigation styles */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 50;
+        transition: all 0.5s ease;
+      }
+      
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Performance optimizations */
+      * {
+        box-sizing: border-box;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Accessibility improvements */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      
+      /* High contrast mode support */
+      @media (prefers-contrast: high) {
+        .loading-screen {
+          background: #000000;
+          color: #ffffff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Enhanced Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <div class="loading-logo">
+          <img src="/imgs/logosada.png" alt="SADA Creation Logo" style="width: 35px; height: 35px; object-fit: contain;" />
+        </div>
+        <div class="loading-spinner"></div>
+        <div class="loading-text">SADA<span style="color: #3b82f6;"> Creation</span></div>
+        <div class="loading-subtext">Loading premium experience...</div>
+      </div>
+    </div>
+    
+    <!-- Main App Container -->
+    <div id="root" class="app-container"></div>
+    
+    <!-- Scripts -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Enhanced Loading Script -->
+    <script>
+      // Performance monitoring
+      const startTime = performance.now();
+      
+      // Enhanced loading screen management
+      function hideLoadingScreen() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const appContainer = document.querySelector('.app-container');
+        
+        if (loadingScreen && appContainer) {
+          // Minimum loading time for smooth experience
+          const minLoadTime = 1500;
+          const elapsedTime = performance.now() - startTime;
+          const remainingTime = Math.max(0, minLoadTime - elapsedTime);
+          
+          setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            appContainer.classList.add('loaded');
+            
+            // Remove loading screen from DOM after animation
+            setTimeout(() => {
+              if (loadingScreen.parentNode) {
+                loadingScreen.parentNode.removeChild(loadingScreen);
+              }
+            }, 800);
+          }, remainingTime);
+        }
+      }
+      
+      // Wait for both DOM and resources to load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          window.addEventListener('load', hideLoadingScreen);
+        });
+      } else {
+        window.addEventListener('load', hideLoadingScreen);
+      }
+      
+      // Fallback timeout
+      setTimeout(hideLoadingScreen, 5000);
+      
+      // Preload critical resources
+      const preloadLinks = [
+        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap'
+      ];
+      
+      preloadLinks.forEach(href => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'style';
+        link.href = href;
+        document.head.appendChild(link);
+      });
+      
+      // Service Worker registration for PWA capabilities
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+      
+      // Analytics and performance tracking
+      window.addEventListener('load', () => {
+        const loadTime = performance.now() - startTime;
+        console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+        
+        // Send performance data to analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'page_load_time', {
+            value: Math.round(loadTime),
+            custom_parameter: 'premium_portfolio'
+          });
+        }
+      });
+    </script>
+    
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_TRACKING_ID');
+    </script>
+    -->
+  </body>
+</html>

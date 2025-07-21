@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADA Creation - Complete Portfolio Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal-backdrop {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white">
+    <div class="p-8">
+        <h1 class="text-4xl font-bold mb-8 text-center">SADA Creation - Complete Portfolio</h1>
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button onclick="filterProjects('All')" class="filter-btn active px-6 py-3 rounded-xl font-medium transition-all duration-300 bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg shadow-blue-600/30">
+                All
+            </button>
+            <button onclick="filterProjects('Logo Design')" class="filter-btn px-6 py-3 rounded-xl font-medium transition-all duration-300 bg-slate-900/60 text-slate-300 hover:bg-slate-800/60 border border-slate-700/50">
+                Logo Design
+            </button>
+            <button onclick="filterProjects('Poster Design')" class="filter-btn px-6 py-3 rounded-xl font-medium transition-all duration-300 bg-slate-900/60 text-slate-300 hover:bg-slate-800/60 border border-slate-700/50">
+                Poster Design
+            </button>
+            <button onclick="filterProjects('Invitations / Invitation Videos')" class="filter-btn px-6 py-3 rounded-xl font-medium transition-all duration-300 bg-slate-900/60 text-slate-300 hover:bg-slate-800/60 border border-slate-700/50">
+                Invitations / Invitation Videos
+            </button>
+        </div>
+        
+        <!-- Portfolio Grid -->
+        <div id="portfolioGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Logo Projects -->
+            <div class="project-card group relative overflow-hidden rounded-2xl cursor-pointer" data-category="Logo Design" onclick="openModal('SADA Creation Brand Identity', '/imgs/logosada.png', 'Premium brand identity design for SADA Creation studio', 'logo')">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 opacity-20"></div>
+                <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/60 transition-all duration-500"></div>
+                <div class="relative p-8 h-80 flex flex-col justify-center items-center text-center">
+                    <div class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <div class="text-4xl">🎨</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">SADA Creation Brand Identity</h3>
+                    <p class="text-blue-400 text-sm uppercase tracking-wider font-medium mb-3">Logo Design</p>
+                    <div class="absolute inset-0 bg-slate-950/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <button class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl hover:scale-105 transition-all duration-300">
+                            👁️ View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poster Projects -->
+            <div class="project-card group relative overflow-hidden rounded-2xl cursor-pointer" data-category="Poster Design" onclick="openModal('Digital Marketing Webinar', '/posters/digital marketing webinar (5).jpg', 'Professional digital marketing webinar promotion poster', 'poster')">
+                <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-blue-600 opacity-20"></div>
+                <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/60 transition-all duration-500"></div>
+                <div class="relative p-8 h-80 flex flex-col justify-center items-center text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <div class="text-4xl">📋</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Digital Marketing Webinar</h3>
+                    <p class="text-green-400 text-sm uppercase tracking-wider font-medium mb-3">Poster Design</p>
+                    <div class="absolute inset-0 bg-slate-950/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <button class="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-xl hover:scale-105 transition-all duration-300">
+                            👁️ View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invitation Projects -->
+            <div class="project-card group relative overflow-hidden rounded-2xl cursor-pointer" data-category="Invitations / Invitation Videos" onclick="openModal('Wedding Invitation Card', '/invitations/Light Pink Royal Elegant Floral Indian Wedding Invitation .jpg', 'Elegant pink floral Indian wedding invitation design', 'invitation')">
+                <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 opacity-20"></div>
+                <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/60 transition-all duration-500"></div>
+                <div class="relative p-8 h-80 flex flex-col justify-center items-center text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <div class="text-4xl">💌</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Wedding Invitation Card</h3>
+                    <p class="text-pink-400 text-sm uppercase tracking-wider font-medium mb-3">Invitations</p>
+                    <div class="absolute inset-0 bg-slate-950/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <button class="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-xl hover:scale-105 transition-all duration-300">
+                            👁️ View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invitation Video Project -->
+            <div class="project-card group relative overflow-hidden rounded-2xl cursor-pointer" data-category="Invitations / Invitation Videos" onclick="openModal('Nilakshan & Savitha Wedding Video', '/invitation-videos/Nilakshan & Savitha (5).mp4', 'Beautiful wedding invitation video for Nilakshan & Savitha', 'video')">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-700 opacity-20"></div>
+                <div class="absolute inset-0 bg-slate-900/80 group-hover:bg-slate-900/60 transition-all duration-500"></div>
+                <div class="relative p-8 h-80 flex flex-col justify-center items-center text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-purple-600 to-pink-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg relative">
+                        <div class="text-4xl">🎥</div>
+                        <div class="absolute top-1 right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Wedding Invitation Video</h3>
+                    <p class="text-purple-400 text-sm uppercase tracking-wider font-medium mb-3">Invitation Videos</p>
+                    <div class="absolute inset-0 bg-slate-950/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <button class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-700 text-white rounded-xl hover:scale-105 transition-all duration-300">
+                            🎥 View Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="projectModal" class="fixed inset-0 bg-black/80 modal-backdrop z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-slate-700/50 max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between p-6 border-b border-slate-700/50">
+                <div>
+                    <h3 id="modalTitle" class="text-2xl font-bold text-white">Project Title</h3>
+                    <p id="modalCategory" class="text-blue-400 text-sm uppercase tracking-wider font-medium">Category</p>
+                </div>
+                <button onclick="closeModal()" class="w-10 h-10 bg-slate-800/60 hover:bg-slate-700/60 rounded-xl flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300">
+                    ✕
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <div class="lg:w-2/3">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                            <img id="modalImage" src="" alt="" class="w-full h-auto object-contain max-h-[60vh]" style="display: none;">
+                            <video id="modalVideo" controls class="w-full h-auto max-h-[60vh]" style="display: none;">
+                                <source src="" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div id="modalFallback" class="w-full h-64 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center text-6xl">
+                                🎨
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/3">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Project Details</h4>
+                                <p id="modalDescription" class="text-slate-300 leading-relaxed">Project description</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-3">Project Type</h4>
+                                <div id="modalType" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full text-white font-medium">
+                                    🎨 Design
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-3">Features</h4>
+                                <ul id="modalFeatures" class="space-y-2">
+                                    <li class="flex items-center text-slate-300">
+                                        ✅ Professional Quality
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex space-x-3">
+                                <button class="flex-1 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl hover:scale-105 transition-all duration-300 flex items-center justify-center font-medium">
+                                    📥 Download
+                                </button>
+                                <button class="px-4 py-3 bg-slate-800/60 hover:bg-slate-700/60 text-white rounded-xl transition-colors duration-300 flex items-center justify-center">
+                                    📤
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-700', 'text-white', 'shadow-lg', 'shadow-blue-600/30');
+                btn.classList.add('bg-slate-900/60', 'text-slate-300', 'border', 'border-slate-700/50');
+            });
+            
+            event.target.classList.add('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-700', 'text-white', 'shadow-lg', 'shadow-blue-600/30');
+            event.target.classList.remove('bg-slate-900/60', 'text-slate-300', 'border', 'border-slate-700/50');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'All' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        function openModal(title, src, description, type) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            
+            const modalImage = document.getElementById('modalImage');
+            const modalVideo = document.getElementById('modalVideo');
+            const modalFallback = document.getElementById('modalFallback');
+            const modalType = document.getElementById('modalType');
+            const modalFeatures = document.getElementById('modalFeatures');
+            
+            // Hide all media elements
+            modalImage.style.display = 'none';
+            modalVideo.style.display = 'none';
+            modalFallback.style.display = 'none';
+            
+            if (type === 'video') {
+                modalVideo.querySelector('source').src = src;
+                modalVideo.load();
+                modalVideo.style.display = 'block';
+                modalType.innerHTML = '🎥 Invitation Video';
+                modalFeatures.innerHTML = `
+                    <li class="flex items-center text-slate-300">✅ HD Quality</li>
+                    <li class="flex items-center text-slate-300">✅ Professional Editing</li>
+                    <li class="flex items-center text-slate-300">✅ Custom Animation</li>
+                `;
+            } else {
+                modalImage.src = src;
+                modalImage.onload = function() {
+                    modalImage.style.display = 'block';
+                };
+                modalImage.onerror = function() {
+                    modalFallback.style.display = 'flex';
+                    modalFallback.innerHTML = type === 'logo' ? '🎨' : type === 'poster' ? '📋' : '💌';
+                };
+                
+                if (type === 'logo') {
+                    modalType.innerHTML = '🎨 Logo Design';
+                    modalFeatures.innerHTML = `
+                        <li class="flex items-center text-slate-300">✅ Professional Design</li>
+                        <li class="flex items-center text-slate-300">✅ Vector Format</li>
+                        <li class="flex items-center text-slate-300">✅ Brand Identity</li>
+                    `;
+                } else if (type === 'poster') {
+                    modalType.innerHTML = '📋 Poster Design';
+                    modalFeatures.innerHTML = `
+                        <li class="flex items-center text-slate-300">✅ Print Ready</li>
+                        <li class="flex items-center text-slate-300">✅ High Quality Design</li>
+                        <li class="flex items-center text-slate-300">✅ Multiple Formats</li>
+                    `;
+                } else if (type === 'invitation') {
+                    modalType.innerHTML = '💌 Invitation Design';
+                    modalFeatures.innerHTML = `
+                        <li class="flex items-center text-slate-300">✅ Elegant Design</li>
+                        <li class="flex items-center text-slate-300">✅ Customizable</li>
+                        <li class="flex items-center text-slate-300">✅ Print & Digital Ready</li>
+                    `;
+                }
+            }
+            
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'unset';
+            
+            // Stop video if playing
+            const video = document.getElementById('modalVideo');
+            video.pause();
+            video.currentTime = 0;
+        }
+        
+        // Close modal when clicking backdrop
+        document.getElementById('projectModal').addEventListener('click', closeModal);
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
