@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "SADA Creation Brand Identity",
+    "description": "Premium brand identity design for SADA Creation studio",
+    "image": "/imgs/logosada.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Modern Real Estate Logo",
+    "description": "Professional green and white real estate property logo",
+    "image": "/logos/Green and White Modern Real Estate Property Logo (1).jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Corporate Logo Design",
+    "description": "Clean and professional corporate logo design",
+    "image": "/logos/logo.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Creative Studio Logo",
+    "description": "Creative and artistic studio logo design",
+    "image": "/logos/logo3.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Tech Company Branding",
+    "description": "Modern technology company branding solution",
+    "image": "/logos/logo4.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "title": "Peacock Designer Brand",
+    "description": "Elegant peacock-themed designer brand logo",
+    "image": "/logos/PEACOCK DESIGNER (1) reject.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 7,
+    "title": "Petta.lk E-commerce Logo",
+    "description": "E-commerce platform logo with modern appeal",
+    "image": "/logos/petta.lk.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "title": "Professional Wall Sign",
+    "description": "Professional hanging wall sign mockup design",
+    "image": "/logos/Hanging Wall Sign MockUp 4.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 9,
+    "title": "Paper Edition Logo",
+    "description": "Elegant paper edition logo mockup design",
+    "image": "/logos/Logo Mockup - Paper Edition 1 - by PuneDesign.png",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 10,
+    "title": "Premium Logo Collection",
+    "description": "Collection of premium logo designs with artistic excellence",
+    "image": "/imgs/logosada.png",
+    "category": "logo",
+    "featured": true
+  }
+]
