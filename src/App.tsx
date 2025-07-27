@@ -365,21 +365,13 @@ const PortfolioPreview = () => {
   }, [isModalOpen]);
 
   const projects = [
-    // Logo Design Projects - All SADA Creation Logos
+    // Logo Design Projects - All Local Logo Files
     { 
       title: 'SADA Creation Brand Identity', 
       category: 'Logo Design', 
-      image: '/logos/logo.png', 
+      image: '/imgs/logosada.png', 
       gradient: 'from-blue-600 to-indigo-700',
       description: 'Premium brand identity design for SADA Creation studio',
-      type: 'logo'
-    },
-    { 
-      title: 'Modern Real Estate Logo', 
-      category: 'Logo Design', 
-      image: '/logos/Green and White Modern Real Estate Property Logo (1).jpg', 
-      gradient: 'from-green-500 to-blue-600',
-      description: 'Professional green and white real estate property logo',
       type: 'logo'
     },
     { 
@@ -391,7 +383,15 @@ const PortfolioPreview = () => {
       type: 'logo'
     },
     { 
-      title: 'Creative Studio Logo', 
+      title: 'Creative Studio Logo 2', 
+      category: 'Logo Design', 
+      image: '/logos/logo2.png', 
+      gradient: 'from-purple-500 to-blue-600',
+      description: 'Creative and artistic studio logo design variant',
+      type: 'logo'
+    },
+    { 
+      title: 'Creative Studio Logo 3', 
       category: 'Logo Design', 
       image: '/logos/logo3.png', 
       gradient: 'from-purple-600 to-blue-700',
@@ -404,6 +404,14 @@ const PortfolioPreview = () => {
       image: '/logos/logo4.png', 
       gradient: 'from-blue-700 to-indigo-800',
       description: 'Modern technology company branding solution',
+      type: 'logo'
+    },
+    { 
+      title: 'Modern Real Estate Logo', 
+      category: 'Logo Design', 
+      image: '/logos/Green and White Modern Real Estate Property Logo (1).jpg', 
+      gradient: 'from-green-500 to-blue-600',
+      description: 'Professional green and white real estate property logo',
       type: 'logo'
     },
     { 
@@ -438,6 +446,48 @@ const PortfolioPreview = () => {
       description: 'Elegant paper edition logo mockup design',
       type: 'mockup'
     },
+    
+    // Poster Design Projects - All Local Poster Files
+    { 
+      title: 'Real Estate Property Advertisement', 
+      category: 'Poster Design', 
+      image: '/posters/074 3012 735 (2).jpg', 
+      gradient: 'from-blue-600 to-green-600',
+      description: 'Professional real estate property advertisement poster',
+      type: 'poster'
+    },
+    { 
+      title: 'Real Estate Contact Poster', 
+      category: 'Poster Design', 
+      image: '/posters/074 3012 735 (6).jpg', 
+      gradient: 'from-green-600 to-blue-600',
+      description: 'Real estate contact information promotional poster',
+      type: 'poster'
+    },
+    { 
+      title: 'Real Estate Website Promotion', 
+      category: 'Poster Design', 
+      image: '/posters/074 3012 735 reallygreatsite.com (4).jpg', 
+      gradient: 'from-blue-500 to-green-500',
+      description: 'Real estate website promotional design',
+      type: 'poster'
+    },
+    { 
+      title: 'Business Contact Advertisement', 
+      category: 'Poster Design', 
+      image: '/posters/077 015 8000  077 015 4000 (1).jpg', 
+      gradient: 'from-indigo-600 to-blue-700',
+      description: 'Professional business contact advertisement',
+      type: 'poster'
+    },
+    { 
+      title: 'Land Sale Advertisement', 
+      category: 'Poster Design', 
+      image: '/posters/15 Perch Land (2).jpg', 
+      gradient: 'from-green-700 to-blue-700',
+      description: '15 Perch land sale promotional poster',
+      type: 'poster'
+    },
     { 
       title: 'Real Estate Promo Facebook Post', 
       category: 'Poster Design', 
@@ -447,27 +497,11 @@ const PortfolioPreview = () => {
       type: 'poster'
     },
     { 
-      title: 'Smart Life Upgrade Poster', 
+      title: 'Digital Marketing Webinar', 
       category: 'Poster Design', 
-      image: '/posters/Upgrade to a Smarter Life!.jpg', 
+      image: '/posters/digital marketing webinar (5).jpg', 
       gradient: 'from-purple-600 to-blue-700',
-      description: 'Modern technology upgrade promotional poster',
-      type: 'poster'
-    },
-    { 
-      title: 'Rental Services Advertisement', 
-      category: 'Poster Design', 
-      image: '/posters/Rental Services.jpg', 
-      gradient: 'from-indigo-600 to-purple-700',
-      description: 'Professional rental services promotional poster',
-      type: 'poster'
-    },
-    { 
-      title: 'Farm Activities Poster', 
-      category: 'Poster Design', 
-      image: '/posters/our activities while on the farm.jpg', 
-      gradient: 'from-green-600 to-yellow-600',
-      description: 'Farm activities promotional poster design',
+      description: 'Digital marketing webinar promotional poster',
       type: 'poster'
     },
     { 
@@ -479,6 +513,86 @@ const PortfolioPreview = () => {
       type: 'poster'
     },
     { 
+      title: 'Dodol Product Advertisement', 
+      category: 'Poster Design', 
+      image: '/posters/Dodol (2).jpg', 
+      gradient: 'from-orange-600 to-red-600',
+      description: 'Traditional dodol product advertisement design',
+      type: 'poster'
+    },
+    { 
+      title: 'Digital Marketing Agency Post', 
+      category: 'Poster Design', 
+      image: '/posters/Green Modern Digital Marketing Agency (Facebook Post).jpg', 
+      gradient: 'from-green-600 to-blue-600',
+      description: 'Green modern digital marketing agency Facebook post',
+      type: 'poster'
+    },
+    { 
+      title: 'Land For Sale Poster', 
+      category: 'Poster Design', 
+      image: '/posters/Land For Sale (10).jpg', 
+      gradient: 'from-blue-700 to-green-700',
+      description: 'Professional land for sale promotional poster',
+      type: 'poster'
+    },
+    { 
+      title: 'Land Sale Advertisement', 
+      category: 'Poster Design', 
+      image: '/posters/LAND FOR SALE (24).jpg', 
+      gradient: 'from-green-600 to-blue-600',
+      description: 'Land sale advertisement promotional design',
+      type: 'poster'
+    },
+    { 
+      title: 'Property Sale Poster', 
+      category: 'Poster Design', 
+      image: '/posters/Land For Sale (7).jpg', 
+      gradient: 'from-blue-600 to-teal-600',
+      description: 'Property sale promotional poster design',
+      type: 'poster'
+    },
+    { 
+      title: 'Real Estate Land Sale', 
+      category: 'Poster Design', 
+      image: '/posters/Land For Sale (9).jpg', 
+      gradient: 'from-teal-600 to-blue-700',
+      description: 'Real estate land sale promotional material',
+      type: 'poster'
+    },
+    { 
+      title: 'Farm Activities Poster', 
+      category: 'Poster Design', 
+      image: '/posters/our activities while on the farm.jpg', 
+      gradient: 'from-green-600 to-yellow-600',
+      description: 'Farm activities promotional poster design',
+      type: 'poster'
+    },
+    { 
+      title: 'Rental Services Advertisement', 
+      category: 'Poster Design', 
+      image: '/posters/Rental Services.jpg', 
+      gradient: 'from-indigo-600 to-purple-700',
+      description: 'Professional rental services promotional poster',
+      type: 'poster'
+    },
+    { 
+      title: 'Roshan Personal Poster', 
+      category: 'Poster Design', 
+      image: '/posters/roshan (3).jpg', 
+      gradient: 'from-blue-700 to-indigo-800',
+      description: 'Personal promotional poster for Roshan',
+      type: 'poster'
+    },
+    { 
+      title: 'Roshan Profile Poster', 
+      category: 'Poster Design', 
+      image: '/posters/roshan.jpg', 
+      gradient: 'from-indigo-700 to-blue-800',
+      description: 'Profile promotional poster design',
+      type: 'poster'
+    },
+    { 
       title: 'Shop23 Business Poster', 
       category: 'Poster Design', 
       image: '/posters/Shop23.png', 
@@ -486,6 +600,40 @@ const PortfolioPreview = () => {
       description: 'Modern shop business promotional poster',
       type: 'poster'
     },
+    { 
+      title: 'Creative Design Poster', 
+      category: 'Poster Design', 
+      image: '/posters/Untitled (1080 x 1350 px).png', 
+      gradient: 'from-purple-600 to-pink-700',
+      description: 'Creative untitled design poster',
+      type: 'poster'
+    },
+    { 
+      title: 'Professional Design Layout', 
+      category: 'Poster Design', 
+      image: '/posters/Untitled-2 (4).png', 
+      gradient: 'from-cyan-600 to-blue-700',
+      description: 'Professional design layout poster',
+      type: 'poster'
+    },
+    { 
+      title: 'Smart Life Upgrade Poster', 
+      category: 'Poster Design', 
+      image: '/posters/Upgrade to a Smarter Life!.jpg', 
+      gradient: 'from-purple-600 to-blue-700',
+      description: 'Modern technology upgrade promotional poster',
+      type: 'poster'
+    },
+    { 
+      title: 'WhatsApp Marketing Image', 
+      category: 'Poster Design', 
+      image: '/posters/WhatsApp Image 2024-10-31 at 08.17.45.jpeg', 
+      gradient: 'from-green-600 to-blue-600',
+      description: 'WhatsApp marketing promotional image',
+      type: 'poster'
+    },
+    
+    // Invitation Design Projects - All Local Invitation Files
     { 
       title: 'Wedding Invitation Card', 
       category: 'Invitations / Invitation Videos', 
@@ -502,8 +650,10 @@ const PortfolioPreview = () => {
       description: 'Formal cordial wedding invitation card design',
       type: 'invitation'
     },
+    
+    // Invitation Video Projects - All Local Video Files
     { 
-      title: 'Invitation Video', 
+      title: 'Wedding Invitation Video', 
       category: 'Invitations / Invitation Videos', 
       image: '/invitation-videos/Nilakshan & Savitha (5).mp4', 
       gradient: 'from-purple-600 to-pink-700',
