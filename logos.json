@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Premium Logo Design 1",
+    "description": "Professional logo design with modern aesthetics",
+    "image": "https://i.ibb.co/5VhzFFC/logo1.jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Premium Logo Design 2", 
+    "description": "Creative logo design with striking visuals",
+    "image": "https://i.ibb.co/MmwW9Bs/logo2.jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Premium Logo Design 3",
+    "description": "Elegant logo design with premium finish",
+    "image": "https://i.ibb.co/btgcqK7/logo3.jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Premium Logo Design 4",
+    "description": "Dynamic logo design with bold typography",
+    "image": "https://i.ibb.co/Fkz9kCQ/logo4.jpg", 
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Premium Logo Design 5",
+    "description": "Sophisticated logo design with artistic flair",
+    "image": "https://i.ibb.co/YFpLdmJ/logo5.jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "title": "Premium Logo Design 6",
+    "description": "Modern logo design with clean layout",
+    "image": "https://i.ibb.co/cKGDBR7/logo6.jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 7,
+    "title": "Premium Logo Design 7",
+    "description": "Creative logo design with vibrant colors",
+    "image": "https://i.ibb.co/prQq5s4/logo7.jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "title": "Premium Logo Design 8",
+    "description": "Professional logo design with premium quality",
+    "image": "https://i.ibb.co/0RfsMq8/logo8.jpg",
+    "category": "logo",
+    "featured": true
+  }
+]
