@@ -328,7 +328,34 @@ const PortfolioPreview = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showFullPortfolio, setShowFullPortfolio] = useState(false);
+  const [logoProjects, setLogoProjects] = useState<any[]>([]);
   const filters = ['All', 'Logo Design', 'Poster Design', 'Invitations / Invitation Videos'];
+
+  // Load logos from JSON file
+  useEffect(() => {
+    const loadLogos = async () => {
+      try {
+        const response = await fetch('/logos.json');
+        if (response.ok) {
+          const logos = await response.json();
+          const logoProjectsFromJson = logos.map((logo: any) => ({
+            title: logo.title,
+            category: 'Logo Design',
+            image: logo.image,
+            gradient: 'from-blue-600 to-indigo-700',
+            description: logo.description,
+            type: 'logo'
+          }));
+          setLogoProjects(logoProjectsFromJson);
+        }
+      } catch (error) {
+        console.error('Failed to load logos:', error);
+        // Fallback to hardcoded logos if JSON fails
+        setLogoProjects([]);
+      }
+    };
+    loadLogos();
+  }, []);
 
   const openProjectModal = (project: any) => {
     setSelectedProject(project);
