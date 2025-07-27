@@ -62,5 +62,21 @@
     "image": "https://i.ibb.co/0RfsMq8/logo8.jpg",
     "category": "logo",
     "featured": true
+  },
+  {
+    "id": 9,
+    "title": "Premium Logo Design 9",
+    "description": "Creative logo design with modern appeal",
+    "image": "https://i.ibb.co/N27RyZw/logo9.jpg",
+    "category": "logo",
+    "featured": true
+  },
+  {
+    "id": 10,
+    "title": "Premium Logo Design 10",
+    "description": "Professional logo design with artistic excellence",
+    "image": "https://i.ibb.co/Z6SkSDt/logo10.jpg",
+    "category": "logo",
+    "featured": true
   }
 ]
