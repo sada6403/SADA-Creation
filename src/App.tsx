@@ -666,8 +666,12 @@ const Contact = () => {
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
-    // Create WhatsApp URL with your business phone number
-    const whatsappURL = `https://wa.me/94701234567?text=${encodedMessage}`;
+    // Create WhatsApp URL - wa.link doesn't support text parameter, so we'll use wa.me
+    // If you want to use wa.link, it will just open the chat without pre-filled message
+    const whatsappURL = `https://api.whatsapp.com/send?phone=94786516761&text=${encodedMessage}`;
+    
+    // Alternative: Just open wa.link without message (uncomment this line and comment above if you prefer)
+    // const whatsappURL = `https://wa.link/f3x54m`;
     
     // Open WhatsApp in new tab
     window.open(whatsappURL, '_blank');
