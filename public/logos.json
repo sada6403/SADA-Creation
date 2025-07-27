@@ -3,7 +3,7 @@
     "id": 1,
     "title": "SADA Creation Brand Identity",
     "description": "Premium brand identity design for SADA Creation studio",
-    "image": "/imgs/logosada.png",
+    "image": "/logos/logo.png",
     "category": "logo",
     "featured": true
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "title": "Premium Logo Collection",
     "description": "Collection of premium logo designs with artistic excellence",
-    "image": "/imgs/logosada.png",
+    "image": "/logos/logo2.png",
     "category": "logo",
     "featured": true
   }
