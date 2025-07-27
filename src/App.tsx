@@ -32,7 +32,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-lg">
-              <img src="/logos/logo.png" alt="SADA Creation Logo" className="w-9 h-9 object-contain" />
+              <img src="/logos/logo.png?v=2" alt="SADA Creation Logo" className="w-9 h-9 object-contain" />
             </div>
             <div className="text-2xl font-bold text-white">
               SADA<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"> Creation</span>
