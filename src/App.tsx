@@ -82,19 +82,20 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/5 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-600/3 via-indigo-600/3 to-transparent rounded-full"></div>
       </div>
-      
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto sm:mt-24">
+        {/* Add space between header and hero text */}
+        <div className="h-24 sm:h-32"></div>
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Crafting
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-300 to-blue-400">
-              Visual Excellence
-            </span>
+        Crafting
+        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-indigo-300 to-blue-400">
+          Visual Excellence
+        </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-blue-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Transform your brand with our premium design solutions. Specializing in professional logo design, 
-            cinematic video editing, and stunning visual experiences that captivate audiences.
+        Transform your brand with our premium design solutions. Specializing in professional logo design, 
+        cinematic video editing, and stunning visual experiences that captivate audiences.
           </p>
         </div>
         
