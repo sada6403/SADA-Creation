@@ -4,7 +4,7 @@ import {
   ArrowRight, CheckCircle, Zap, Award, Users, Clock, Shield,
   Palette, Video, Layers, Grid3X3, Megaphone, ImageIcon,
   Send,
-  TrendingUp, Target, Lightbulb, Rocket, Diamond, Crown,
+  TrendingUp, Target, Lightbulb, Rocket, Diamond,
   Smartphone, FileText, Package, Monitor
 } from 'lucide-react';
 import Portfolio from './components/Portfolio';
@@ -209,14 +209,22 @@ const About = () => {
 
 // Services Preview
 const ServicesPreview = () => {
+  const [showAllServices, setShowAllServices] = useState(false);
+  const [selectedService, setSelectedService] = useState<any>(null);
+
   const services = [
     { 
       name: 'Branding & Identity', 
       icon: Palette, 
-      price: 'From LKR 1,500', 
+      price: 'From LKR 500', 
       description: 'Complete brand identity solutions from logos to business cards',
       features: ['Logo Design (Minimal/Luxury/3D/Mascot)', 'Brand Identity Design', 'Business Cards & Letterheads'],
-      gradient: 'from-blue-600 to-indigo-700'
+      gradient: 'from-blue-600 to-indigo-700',
+      packages: [
+        { name: 'Basic', price: 'LKR 500', features: ['1 logo concept', 'Simple color scheme', 'PNG & JPG files'] },
+        { name: 'Standard', price: 'LKR 1000', features: ['2 logo concepts', 'Color palette + fonts', 'PNG, JPG & PDF files'] },
+        { name: 'Premium', price: 'LKR 1500', features: ['3 logo concepts', 'Full brand board (logo, colors, fonts)', 'Source files + mockups'] }
+      ]
     },
     { 
       name: 'Social Media Design', 
@@ -224,23 +232,38 @@ const ServicesPreview = () => {
       price: 'From LKR 500', 
       description: 'Engaging social media graphics and promotional content',
       features: ['Instagram/Facebook Posts & Stories', 'YouTube Thumbnails', 'LinkedIn Banners', 'WhatsApp & Telegram Ads'],
-      gradient: 'from-purple-600 to-pink-700'
+      gradient: 'from-purple-600 to-pink-700',
+      packages: [
+        { name: 'Basic', price: 'LKR 500', features: ['3 social media posts', '1 revision', 'JPG format'] },
+        { name: 'Standard', price: 'LKR 1000', features: ['6 social media posts', '2 revisions', 'PNG & JPG files'] },
+        { name: 'Premium', price: 'LKR 1500', features: ['10 posts + highlight covers', '3 revisions', 'All formats (JPG, PNG, PSD)'] }
+      ]
     },
     { 
       name: 'Print Design', 
       icon: FileText, 
-      price: 'From LKR 1,200', 
+      price: 'From LKR 500', 
       description: 'Professional print materials designed for impact',
       features: ['Flyers & Posters', 'Brochures (Bi-Fold/Tri-Fold)', 'Menu Design', 'Invitations & Greeting Cards'],
-      gradient: 'from-green-600 to-teal-700'
+      gradient: 'from-green-600 to-teal-700',
+      packages: [
+        { name: 'Basic', price: 'LKR 500', features: ['1 flyer/poster', 'Print-ready PDF', '1 revision'] },
+        { name: 'Standard', price: 'LKR 1000', features: ['2-sided flyer/poster or brochure', 'High-resolution files', '2 revisions'] },
+        { name: 'Premium', price: 'LKR 1500', features: ['Multiple print materials (up to 3)', 'Custom size & format', 'Source file + 3 revisions'] }
+      ]
     },
     { 
       name: 'Product & Packaging', 
       icon: Package, 
-      price: 'From LKR 1,000', 
+      price: 'From LKR 500', 
       description: 'Eye-catching product packaging and label designs',
       features: ['Box, Label, Pouch & Bottle Design', 'Stickers & Tags', 'Product Mockups'],
-      gradient: 'from-orange-600 to-red-700'
+      gradient: 'from-orange-600 to-red-700',
+      packages: [
+        { name: 'Basic', price: 'LKR 500', features: ['Simple label or sticker design', 'Print-ready file', '1 revision'] },
+        { name: 'Standard', price: 'LKR 1000', features: ['1 full packaging design', '2 revisions', 'High-resolution export'] },
+        { name: 'Premium', price: 'LKR 1500', features: ['Full packaging + label set', 'Source files', 'Mockup preview + 3 revisions'] }
+      ]
     },
     { 
       name: 'Web Design & Development', 
@@ -248,17 +271,57 @@ const ServicesPreview = () => {
       price: 'From LKR 7,500', 
       description: 'Modern websites and digital experiences',
       features: ['Custom Website Design', 'Responsive Development', 'E-commerce Sites', 'Landing Pages'],
-      gradient: 'from-indigo-600 to-blue-700'
+      gradient: 'from-indigo-600 to-blue-700',
+      packages: [
+        { name: 'Basic', price: 'LKR 7,500', features: ['Single Page Website', 'Responsive Design', 'Basic SEO', 'Contact Form'] },
+        { name: 'Advanced', price: 'LKR 15,000', features: ['Multi-page Website', 'CMS Integration', 'E-commerce Ready', 'Advanced SEO', 'Mobile Optimized'] },
+        { name: 'Premium', price: 'LKR 35,000', features: ['Custom Web Application', 'Full E-commerce', 'Admin Dashboard', 'Payment Integration', 'Ongoing Support'] }
+      ]
     },
     { 
       name: 'Marketing & Other Services', 
       icon: TrendingUp, 
-      price: 'From LKR 150', 
+      price: 'From LKR 500', 
       description: 'Comprehensive marketing materials and design services',
       features: ['Banner Ads', 'Email Templates', 'Presentations', 'Resume Design', 'Photo Retouching'],
-      gradient: 'from-cyan-600 to-blue-700'
+      gradient: 'from-cyan-600 to-blue-700',
+      packages: [
+        { name: 'Basic', price: 'LKR 500', features: ['Business card / email signature', '1 design', '1 revision'] },
+        { name: 'Standard', price: 'LKR 1000', features: ['Business card + flyer or poster', '2 revisions', 'Print-ready files'] },
+        { name: 'Premium', price: 'LKR 1500', features: ['Complete marketing pack (card, flyer, banner)', '3 revisions', 'Source files + all exports'] }
+      ]
     }
   ];
+
+  // Show only first 3 services by default, all 6 when showAllServices is true
+  const displayedServices = showAllServices ? services : services.slice(0, 3);
+
+  const openServiceModal = (service: any) => {
+    setSelectedService(service);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeServiceModal = () => {
+    setSelectedService(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  // Close modal on Escape key
+  React.useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeServiceModal();
+      }
+    };
+
+    if (selectedService) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedService]);
 
   return (
     <section id="services" className="py-24 bg-gradient-to-b from-slate-950 to-slate-950">
@@ -276,7 +339,7 @@ const ServicesPreview = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {displayedServices.map((service, index) => (
             <div key={index} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/15 to-indigo-600/15 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-blue-600/50 transition-all duration-300 h-full group-hover:transform group-hover:scale-105">
@@ -300,7 +363,10 @@ const ServicesPreview = () => {
                   <div className={`text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${service.gradient}`}>
                     {service.price}
                   </div>
-                  <button className="px-4 py-2 bg-slate-800/60 hover:bg-slate-700/60 text-white rounded-xl transition-colors duration-300 flex items-center">
+                  <button 
+                    onClick={() => openServiceModal(service)}
+                    className="px-4 py-2 bg-slate-800/60 hover:bg-slate-700/60 text-white rounded-xl transition-colors duration-300 flex items-center"
+                  >
                     <span className="text-sm font-medium">Learn More</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>
@@ -310,13 +376,121 @@ const ServicesPreview = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-800 transform hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-600/30 flex items-center mx-auto">
-            <Grid3X3 className="w-5 h-5 mr-2" />
-            View All Services
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </button>
-        </div>
+        {/* View All Services Button */}
+        {!showAllServices && (
+          <div className="text-center mt-16">
+            <button 
+              onClick={() => setShowAllServices(true)}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-800 transform hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-600/30 flex items-center mx-auto"
+            >
+              <Grid3X3 className="w-5 h-5 mr-2" />
+              View All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </button>
+          </div>
+        )}
+
+        {/* Show Less Button */}
+        {showAllServices && (
+          <div className="text-center mt-16">
+            <button 
+              onClick={() => setShowAllServices(false)}
+              className="px-6 py-3 bg-slate-800/60 hover:bg-slate-700/60 text-white font-medium rounded-xl transition-all duration-300 flex items-center mx-auto"
+            >
+              Show Less
+            </button>
+          </div>
+        )}
+
+        {/* Service Detail Modal */}
+        {selectedService && (
+          <div 
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={closeServiceModal}
+          >
+            <div 
+              className="relative max-w-4xl max-h-[90vh] overflow-y-auto bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeServiceModal}
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-slate-800/80 hover:bg-slate-700/80 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Modal Content */}
+              <div className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${selectedService.gradient} rounded-2xl flex items-center justify-center mr-4`}>
+                    <selectedService.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">{selectedService.name}</h3>
+                    <p className="text-slate-300 text-lg">{selectedService.description}</p>
+                  </div>
+                </div>
+
+                {/* Service Features */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-white mb-4">What's Included:</h4>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {selectedService.features.map((feature: string, index: number) => (
+                      <div key={index} className="flex items-center text-slate-200">
+                        <CheckCircle className="w-5 h-5 text-blue-400 mr-3 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pricing Packages */}
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-6">Pricing Packages:</h4>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {selectedService.packages.map((pkg: any, index: number) => (
+                      <div key={index} className={`bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-300 ${
+                        index === 1 ? 'border-blue-600/50 transform scale-105' : 'border-slate-700/50 hover:border-blue-600/30'
+                      }`}>
+                        {index === 1 && (
+                          <div className="text-center mb-4">
+                            <span className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                              Most Popular
+                            </span>
+                          </div>
+                        )}
+                        <div className="text-center mb-6">
+                          <h5 className="text-xl font-bold text-white mb-2">{pkg.name}</h5>
+                          <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-2">
+                            {pkg.price}
+                          </div>
+                        </div>
+                        
+                        <ul className="space-y-3 mb-6">
+                          {pkg.features.map((feature: string, featureIndex: number) => (
+                            <li key={featureIndex} className="flex items-center text-slate-200 text-sm">
+                              <CheckCircle className="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        
+                        <button className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+                          index === 1
+                            ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white hover:from-blue-700 hover:to-indigo-800'
+                            : 'border-2 border-blue-600/50 text-blue-400 hover:bg-blue-600 hover:text-white'
+                        }`}>
+                          Get Started
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -333,20 +507,20 @@ const PricingTables = () => {
       packages: [
         { 
           name: 'Basic', 
-          price: 'LKR 3,000', 
-          features: ['Logo Design (Minimal)', 'Business Card Design', '2 Revisions', 'PNG/JPG Files'],
+          price: 'LKR 500', 
+          features: ['1 logo concept', 'Simple color scheme', 'PNG & JPG files'],
           popular: false
         },
         { 
-          name: 'Advanced', 
-          price: 'LKR 6,500', 
-          features: ['Logo Design (Luxury/3D)', 'Business Card + Letterhead', 'Brand Color Palette', '5 Revisions', 'Full File Set'],
+          name: 'Standard', 
+          price: 'LKR 1,000', 
+          features: ['2 logo concepts', 'Color palette + fonts', 'PNG, JPG & PDF files'],
           popular: true
         },
         { 
           name: 'Premium', 
-          price: 'LKR 12,000', 
-          features: ['Complete Brand Kit', 'Mascot Logo Option', 'Brand Guidelines', 'Stationery Package', 'Unlimited Revisions'],
+          price: 'LKR 1,500', 
+          features: ['3 logo concepts', 'Full brand board (logo, colors, fonts)', 'Source files + mockups'],
           popular: false
         }
       ]
@@ -358,19 +532,19 @@ const PricingTables = () => {
         { 
           name: 'Basic', 
           price: 'LKR 500', 
-          features: ['3 Posts/Stories', 'Basic Templates', 'PNG/JPG Format', '1 Revision'],
+          features: ['3 social media posts', '1 revision', 'JPG format'],
           popular: false
         },
         { 
-          name: 'Advanced', 
-          price: 'LKR 1,200', 
-          features: ['10 Posts/Stories', 'Custom Designs', 'Brand Integration', '3 Revisions', 'Multiple Formats'],
+          name: 'Standard', 
+          price: 'LKR 1,000', 
+          features: ['6 social media posts', '2 revisions', 'PNG & JPG files'],
           popular: true
         },
         { 
           name: 'Premium', 
-          price: 'LKR 2,500', 
-          features: ['Monthly Package (30 Posts)', 'Animated Content', 'Campaign Designs', 'Unlimited Revisions', 'Source Files'],
+          price: 'LKR 1,500', 
+          features: ['10 posts + highlight covers', '3 revisions', 'All formats (JPG, PNG, PSD)'],
           popular: false
         }
       ]
@@ -381,20 +555,20 @@ const PricingTables = () => {
       packages: [
         { 
           name: 'Basic', 
-          price: 'LKR 1,200', 
-          features: ['Flyers/Brochures', 'Basic Layout', 'Print Ready PDF', '2 Revisions'],
+          price: 'LKR 500', 
+          features: ['1 flyer/poster', 'Print-ready PDF', '1 revision'],
           popular: false
         },
         { 
-          name: 'Advanced', 
-          price: 'LKR 2,800', 
-          features: ['Multi-page Catalogs', 'Professional Layout', 'Image Integration', '4 Revisions', 'Multiple Sizes'],
+          name: 'Standard', 
+          price: 'LKR 1,000', 
+          features: ['2-sided flyer/poster or brochure', 'High-resolution files', '2 revisions'],
           popular: true
         },
         { 
           name: 'Premium', 
-          price: 'LKR 5,500', 
-          features: ['Complete Print Package', 'Custom Illustrations', 'Premium Finishes', 'Unlimited Revisions', 'Source Files'],
+          price: 'LKR 1,500', 
+          features: ['Multiple print materials (up to 3)', 'Custom size & format', 'Source file + 3 revisions'],
           popular: false
         }
       ]
@@ -405,20 +579,20 @@ const PricingTables = () => {
       packages: [
         { 
           name: 'Basic', 
-          price: 'LKR 1,000', 
-          features: ['Simple Label Design', 'Basic Packaging', '2 Revisions', 'Print Ready Files'],
+          price: 'LKR 500', 
+          features: ['Simple label or sticker design', 'Print-ready file', '1 revision'],
           popular: false
         },
         { 
-          name: 'Advanced', 
-          price: 'LKR 2,500', 
-          features: ['Custom Packaging Design', 'Product Mockups', 'Brand Integration', '4 Revisions', 'Multiple Formats'],
+          name: 'Standard', 
+          price: 'LKR 1,000', 
+          features: ['1 full packaging design', '2 revisions', 'High-resolution export'],
           popular: true
         },
         { 
           name: 'Premium', 
-          price: 'LKR 5,000', 
-          features: ['Complete Packaging Suite', 'Die-cut Templates', 'Premium Mockups', 'Unlimited Revisions', 'Production Support'],
+          price: 'LKR 1,500', 
+          features: ['Full packaging + label set', 'Source files', 'Mockup preview + 3 revisions'],
           popular: false
         }
       ]
@@ -453,20 +627,20 @@ const PricingTables = () => {
       packages: [
         { 
           name: 'Basic', 
-          price: 'LKR 150', 
-          features: ['Simple Invitations', 'Basic Announcements', '1 Revision', 'Digital Format'],
+          price: 'LKR 500', 
+          features: ['Business card / email signature', '1 design', '1 revision'],
           popular: false
         },
         { 
-          name: 'Advanced', 
-          price: 'LKR 500', 
-          features: ['Custom Invitations', 'Event Materials', 'Print + Digital', '3 Revisions', 'Multiple Formats'],
+          name: 'Standard', 
+          price: 'LKR 1,000', 
+          features: ['Business card + flyer or poster', '2 revisions', 'Print-ready files'],
           popular: true
         },
         { 
           name: 'Premium', 
           price: 'LKR 1,500', 
-          features: ['Complete Event Package', 'Video Invitations', 'Promotional Materials', 'Unlimited Revisions', 'Full Suite'],
+          features: ['Complete marketing pack (card, flyer, banner)', '3 revisions', 'Source files + all exports'],
           popular: false
         }
       ]
@@ -513,7 +687,6 @@ const PricingTables = () => {
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                   <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center">
-                    <Crown className="w-4 h-4 mr-1" />
                     Most Popular
                   </div>
                 </div>
@@ -833,10 +1006,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center">
-                <Crown className="w-6 h-6 text-white" />
-              </div>
+            <div className="flex items-center mb-6">
               <div className="text-2xl font-bold text-white">
                 SADA<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"> Creation</span>
               </div>
